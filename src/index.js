@@ -1,5 +1,6 @@
 
 const express = require('express');
+const cors = require('cors');
 const fetch = require('node-fetch');
 const path = require('path');
 
@@ -12,6 +13,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 // MIDDLEWARES
+app.use(cors());
 app.use(express.json());
 
 // ROUTES
