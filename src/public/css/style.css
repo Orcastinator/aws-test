@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    position: relative;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    position: absolute;
+    background-color: aliceblue;
+    height: 8%;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 1px 1px black;
+}
+main {
+    position: absolute;
+    top: 10%;
+    margin: 0 auto;
+    width: 80%;
+    background-color: ghostwhite;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 3px black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    height: 8%;
+    bottom: 0;
+    box-shadow: 0 -1px 1px black;
+}
+.contenido {
+    position: absolute;
+    margin: 0;
+    width: 1500px;
+    height: 700px;
+}
+.ground {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/ground.png);
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+}
+.plowed {
+    background-image: none;
+    background-color: beige;
+}
+.seeded {
+    background-image: url(../img/seeded.png);
+}
+.growed {
+    background-image: url(../img/growed.png);
+}
+.dead {
+    background-image: none;
+    background-color: black;
+}
