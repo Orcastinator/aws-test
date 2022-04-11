@@ -29,7 +29,7 @@ function clickBlock(e){
     let obj = new FetchClick(relX, relY);
     let objJson = JSON.stringify(obj);
     
-    fetch('http://localhost:3000/clickBlock', {
+    fetch('http://192.168.100.239/clickBlock', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: objJson

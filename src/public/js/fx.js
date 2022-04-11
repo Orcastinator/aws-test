@@ -4,14 +4,14 @@
 // >> Dibuja el terreno por primera vez recibiendo el array por fetch.
 // >> Crea un interval que llama periódicamente a drawScreen para refrescar la pantalla del usuario
 function createDrawInterval(){
-    fetch('http://localhost:3000/drawScreen').then(x => x.json()).then(r => drawInit(r));
+    fetch('http://192.168.100.239/drawScreen').then(x => x.json()).then(r => drawInit(r));
     setInterval(drawScreen, 60);
 }
 
 // Recibe un array con los rectángulos y su información para pintar en la pantalla
 function drawScreen(){
-    fetch('http://localhost:3000/drawScreen').then(x => x.json()).then(arr => askDrawScreen(arr));
-    fetch('http://localhost:3000/fruits').then(x => x.json()).then(f => printFruits(f));
+    fetch('http://192.168.100.239/drawScreen').then(x => x.json()).then(arr => askDrawScreen(arr));
+    fetch('http://192.168.100.239/fruits').then(x => x.json()).then(f => printFruits(f));
 }
 
 function drawInit (arr){
