@@ -1,9 +1,10 @@
 
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');
 const path = require('path');
+const socketio = require('socket.io');
 
+// EXPRESS
 const app = express();
 
 // SETTINGS
@@ -22,6 +23,20 @@ app.use(require('./routes/'));
 // STATIC FILES
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(app.get('PORT'), () => {
+// START SERVER
+const server = app.listen(app.get('PORT'), () => {
     console.log("Server on "+app.get('PORT'));
 });
+
+// WEB SOCKETS 
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+    console.log('New user');
+
+    socket.on('001', (data) => {
+        console.log(data);
+    });
+});
+
+

@@ -21,6 +21,7 @@ class FetchClick{
 contenido.addEventListener('click', clickBlock);
 
 function clickBlock(e){
+    socket.emit("001", 'La puta que te parió');
     let x = Math.trunc(((e.pageX/P)*P) - (($(".contenido").offset().left/P)*P)); 
     let y = Math.trunc(((e.pageY/P)*P) - (($(".contenido").offset().top/P)*P));
     let relX = Math.trunc(x/P) * P;

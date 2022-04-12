@@ -1,4 +1,6 @@
 
+
+
 // FUNCIONES
 
 // >> Dibuja el terreno por primera vez recibiendo el array por fetch.
