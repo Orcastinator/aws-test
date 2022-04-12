@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const socketio = require('socket.io');
+const header = require('./header');
 
 // EXPRESS
 const app = express();
@@ -29,36 +30,20 @@ const server = app.listen(app.get('PORT'), () => {
 });
 
 // FUNCIONALIDAD SERVIDOR
-// CONSTANTES
-const W = 1500;
-const H = 700;
-const P = 50;
-const ROWS = H/P;
-const COLS = W/P;
-
 // VARIABLES GLOBALES
 var arrTo = new Array();
 var to;
 var fruits = 0;
 
-// CLASES
-class Ground{
-    constructor(x, y, state, id){
-        this.size = P;
-        this.x = x;
-        this.y = y;
-        this.id = id;
-        this.state = state;
-        this.buildable = true;
-    }
-}
-
 // ARRAY DINÁMICO
+let i, j;
 var arrBlocks = [];
 var cont = 1;
+let ROWS = header.GLOBAL.H/header.GLOBAL.P;
+let COLS = header.GLOBAL.W/header.GLOBAL.P;
 for (i=0;i<COLS;i++){
     for(j=0;j<ROWS;j++){
-            arrBlocks.push(new Ground(i*P, j*P, 'ground', cont++));
+            arrBlocks.push(new header.Ground(i*header.GLOBAL.P, j*header.GLOBAL.P, 'ground', cont++));
         
     }
 }
