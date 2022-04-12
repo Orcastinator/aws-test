@@ -54,7 +54,6 @@ function drawInit (arr){
 }
 
 function updateScreen(arr) {
-    console.log(arrDivs.length);
     for (i=0;i<arr.length;i++){
         let n = arrDivs[i].className.lastIndexOf(" ");
         let aux = arrDivs[i].className.slice(n+1, arrDivs[i].className.length); // Toma la última clase que es la que define el estado real del block
